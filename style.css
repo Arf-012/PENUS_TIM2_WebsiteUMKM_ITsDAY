@@ -10,7 +10,6 @@ body {
   font-family: 'Georgia', serif;
   background-color: #fffef8;
   color: #333;
-  overflow: hidden;
 }
 
 .branding {
@@ -26,33 +25,29 @@ body {
 }
 
 nav {
-  position: fixed;
-  top: 4rem;
+  position: sticky;
+  top: 0;
   left: 0;
-  width: 60px;
-  height: 100vh;
+  width: 100%;
   background-color: #f4f1e9;
-  border-right: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
   z-index: 999;
-  transition: width 0.3s ease;
   overflow: hidden;
-}
-
-nav:hover {
-  width: 200px;
+  height: auto;
 }
 
 nav ul {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row; /* Ini yang memastikan item berjejer ke samping */
+  justify-content: center;
+  align-items: center;
   list-style: none;
-  padding: 2rem 0;
+  padding: 1rem 0;
+  margin: 0;
 }
 
 nav ul li {
-  width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 0 1.5rem;
   white-space: nowrap;
 }
 
@@ -62,25 +57,20 @@ nav ul li a {
   font-weight: bold;
   font-size: 1rem;
   display: inline-block;
-  width: 100%;
   transition: transform 0.2s ease;
 }
 
 nav ul li a:hover {
-  transform: translateX(5px);
+  transform: translateY(-2px);
 }
 
 main {
-  margin-left: 60px;
-  transition: margin-left 0.3s ease;
-}
-
-nav:hover ~ main {
-  margin-left: 200px;
+  margin-left: 0;
+  padding-top: 80px;
 }
 
 section {
-  padding: 120px 2rem 4rem;
+  padding: 2rem;
   border-bottom: 2px dashed #ccc;
   max-width: 1000px;
   margin: 0 auto;
@@ -96,6 +86,8 @@ h2 {
   display: flex;
   gap: 2rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .polaroid {
@@ -106,6 +98,7 @@ h2 {
   text-align: center;
   transform: rotate(-2deg);
   font-family: 'Manrope', sans-serif;
+  flex-shrink: 0;
 }
 
 .polaroid img {
@@ -122,8 +115,49 @@ h2 {
 .description {
   flex: 1;
   font-family: 'Manrope', sans-serif;
+  min-width: 280px;
 }
 
 .description p {
   line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .branding h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    /* flex-direction: column; */ /* Baris ini DIKOMENTARI/DIHAPUS untuk menjaga navigasi horizontal */
+    padding: 0.5rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav ul li {
+    padding: 0.5rem 1rem;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+  }
+
+  main {
+    padding-top: 120px;
+  }
+
+  .menu-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .polaroid {
+    transform: rotate(0deg);
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .description {
+    text-align: center;
+  }
 }
