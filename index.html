@@ -1,137 +1,65 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu Book Style Website</title>
-  <style>
-    body {
-      font-family: 'Georgia', serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fffef8;
-      color: #333;
-      scroll-behavior: smooth;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #f4f1e9;
-      border-bottom: 2px solid #ccc;
-      z-index: 999;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: space-around;
-      list-style: none;
-      padding: 1rem;
-      margin: 0;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #444;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-
-    section {
-      padding: 120px 2rem 4rem;
-      border-bottom: 2px dashed #ccc;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .menu-item {
-      display: flex;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .polaroid {
-      background: white;
-      padding: 1rem;
-      box-shadow: 0 10px 15px rgba(0,0,0,0.2);
-      width: 250px;
-      text-align: center;
-      transform: rotate(-2deg);
-    }
-
-    .polaroid img {
-      width: 100%;
-      border-radius: 4px;
-    }
-
-    .polaroid .caption {
-      margin-top: 0.5rem;
-      font-size: 0.85rem;
-      color: #777;
-    }
-
-    .description {
-      flex: 1;
-    }
-
-    .description p {
-      line-height: 1.6;
-    }
-  </style>
+  <title>Suka Suka Chicken</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Branding -->
+  <div class="branding">
+    <h1>Suka Suka Chicken 🍗</h1>
+  </div>
 
-  <nav>
+  <!-- Hidden Sidebar Nav -->
+  <nav class="sidebar">
     <ul>
       <li><a href="#about">🍜 Appetizer / About</a></li>
       <li><a href="#menu">🍛 Main Course / Menu</a></li>
-      <li><a href="#review">🍭 Dessert / Review</a></li>
-      <li><a href="#footer">🍻 Drinks / Footer</a></li>
+      <li><a href="#review">🧁 Dessert / Review</a></li>
+      <li><a href="#footer">🧃 Drinks / Footer</a></li>
       <li><a href="#contact">📞 Order Now / Kontak</a></li>
     </ul>
   </nav>
 
-  <section id="about">
-    <h2>About</h2>
-    <p>Selamat datang di restoran kami! Kami menyajikan pengalaman kuliner dengan sentuhan klasik dan nuansa homey.</p>
-  </section>
+  <!-- Floating Trigger Arrow -->
+  <div class="sidebar-trigger">➤</div>
 
-  <section id="menu">
-    <h2>Main Course</h2>
-    <div class="menu-item">
-      <div class="polaroid">
-        <img src="https://source.unsplash.com/300x200/?pasta" alt="Carbonara">
-        <div class="caption">Spaghetti Carbonara</div>
+  <!-- Page Sections -->
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>Welcome to Suka Suka Chicken, where flavor comes first!</p>
+    </section>
+
+    <section id="menu">
+      <h2>Main Course</h2>
+      <div class="menu-item">
+        <div class="polaroid">
+          <img src="/images/chicken1.jpg" alt="Crispy Chicken">
+          <div class="caption">Extra Crispy Chicken</div>
+        </div>
+        <div class="description">
+          <p>This crispy chicken is seasoned with our secret blend of spices...</p>
+        </div>
       </div>
-      <div class="description">
-        <p>Pasta creamy dengan telur dan keju parmesan. Dilengkapi dengan bacon renyah dan rempah segar.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="review">
-    <h2>Review</h2>
-    <p>"Makanan terenak yang pernah saya coba! Atmosfernya pun luar biasa." - Pelanggan puas</p>
-  </section>
+    <section id="review">
+      <h2>Review</h2>
+      <p>"The best fried chicken I've had in years!" - Customer A</p>
+    </section>
 
-  <section id="footer">
-    <h2>Footer</h2>
-    <p>Terima kasih telah mengunjungi kami. Ikuti kami di sosial media untuk update menu baru!</p>
-  </section>
+    <section id="footer">
+      <h2>Drinks</h2>
+      <p>Choose from our sweet teas, lemonades, and more!</p>
+    </section>
 
-  <section id="contact">
-    <h2>Kontak</h2>
-    <p>📞 0812-3456-7890<br>
-       📍 Jl. Kenangan No. 7, Jakarta<br>
-       📧 info@menubook.id</p>
-  </section>
-
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>📞 123-456-7890</p>
+    </section>
+  </main>
 </body>
 </html>

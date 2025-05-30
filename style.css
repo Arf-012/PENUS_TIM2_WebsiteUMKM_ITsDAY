@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Blaka&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background-color: #fffef8;
+  color: #333;
+  overflow: hidden;
+}
+
+.branding {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 1rem 0;
+  background-color: transparent;
+  color: #b23b3b;
+  font-family: 'Blaka', cursive;
+  z-index: 1000;
+  top: 0;
+}
+
+nav {
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  width: 60px;
+  height: 100vh;
+  background-color: #f4f1e9;
+  border-right: 2px solid #ccc;
+  z-index: 999;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+nav:hover {
+  width: 200px;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  padding: 2rem 0;
+}
+
+nav ul li {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-block;
+  width: 100%;
+  transition: transform 0.2s ease;
+}
+
+nav ul li a:hover {
+  transform: translateX(5px);
+}
+
+main {
+  margin-left: 60px;
+  transition: margin-left 0.3s ease;
+}
+
+nav:hover ~ main {
+  margin-left: 200px;
+}
+
+section {
+  padding: 120px 2rem 4rem;
+  border-bottom: 2px dashed #ccc;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.menu-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.polaroid {
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  width: 250px;
+  text-align: center;
+  transform: rotate(-2deg);
+  font-family: 'Manrope', sans-serif;
+}
+
+.polaroid img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.polaroid .caption {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.description {
+  flex: 1;
+  font-family: 'Manrope', sans-serif;
+}
+
+.description p {
+  line-height: 1.6;
+}
