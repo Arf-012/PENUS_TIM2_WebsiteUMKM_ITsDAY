@@ -1,74 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suka Suka Chicken</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="background-book"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suka Suka Chicken</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fustat:wght@700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="background-book"></div>
 
-  <nav class="top-navbar">
-    <ul>
-      <li><a href="#about">🍜 About</a></li>
-      <li><a href="#menu">🍛 Menu</a></li>
-      <li><a href="#review">🧁 Review</a></li>
-      <li><a href="#footer">🧃 Drinks</a></li>
-      <li><a href="#contact">📞 Contact</a></li>
-    </ul>
-  </nav>
+    <nav class="top-navbar">
+      <ul>
+        <li><a href="#about">🍜 About</a></li>
+        <li><a href="#menu">🍛 Menu</a></li>
+        <li><a href="#reviews">🧁 Review</a></li>
+        <li><a href="#contact">📞 Contact</a></li>
+      </ul>
+    </nav>
 
-  <div class="notebook-container">
     <div class="branding">
       <h1>Suka Suka Chicken 🍗</h1>
     </div>
 
-  <main>
-    <section id="about">
-      <h2>About</h2>
-      <p>Welcome to Suka Suka Chicken, where flavor comes first! We are passionate about serving the crispiest, most delicious fried chicken using only the freshest ingredients and our unique blend of spices. Come and experience a taste sensation!</p>
-    </section>
-
-    <section id="menu">
-      <h2>Main Course</h2>
-      <div class="menu-item">
-        <div class="polaroid">
-          <img src="images/UMKM1.png" alt="Crispy Chicken">
-          <div class="caption">Paket Lengkap Crispy Chicken</div>
-        </div>
-        <div class="description">
-          <p>This crispy chicken is seasoned with our secret blend of spices and cooked to golden perfection. Each bite offers an irresistible crunch and juicy tenderness inside. A classic favorite!</p>
-        </div>
+    <div class="notebook-container">
+      <div class="title-container">
+        <h1>Welcome to this heartwarming Place</h1>
       </div>
-      </section>
 
-    <section id="review">
-      <h2>Review</h2>
-      <p>"The best fried chicken I've had in years! The crispy texture and unique seasoning are simply amazing." - <strong>Customer A</strong></p>
-      <p>"Suka Suka Chicken is my go-to for comfort food. Their spicy chicken is a must-try, it's perfectly balanced with heat and flavor!" - <strong>Customer B</strong></p>
-      <p>"Always fresh and incredibly tasty. Highly recommend Suka Suka Chicken to everyone!" - <strong>Customer C</strong></p>
-    </section>
+      <main>
+        <section id="about">
+          <h2>About</h2>
+          <p>
+            Welcome to Suka Suka Chicken, where flavor comes first! We are
+            passionate about serving the crispiest, most delicious fried chicken
+            using only the freshest ingredients and our unique blend of spices.
+            Come and experience a taste sensation!
+          </p>
+        </section>
 
-    <section id="footer">
-      <h2>Drinks</h2>
-      <p>Quench your thirst with our refreshing beverage selection, perfect to complement your meal:</p>
-      <ul>
-        <li><strong>Sweet Tea:</strong> Classic Southern sweetness.</li>
-        <li><strong>Fresh Lemonade:</strong> Tangy and refreshing.</li>
-        <li><strong>Iced Coffee:</strong> A cool pick-me-up.</li>
-        <li><strong>Assorted Soft Drinks:</strong> Your favorite bubbly options.</li>
-      </ul>
-    </section>
+        <section id="menu">
+          <h2>Menu</h2>
+          <div class="menu-item">
+            <div class="polaroid">
+              <img src="images/UMKM1.png" alt="Crispy Chicken" />
+              <div class="caption">Paket Lengkap Crispy Chicken</div>
+            </div>
+            <div class="description">
+              <p>
+                This crispy chicken is seasoned with our secret blend of spices
+                and cooked to golden perfection. Each bite offers an
+                irresistible crunch and juicy tenderness inside. A classic
+                favorite!
+              </p>
+            </div>
+          </div>
+        </section>
 
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>Ready to experience the deliciousness? Place your order or get in touch!</p>
-      <p>📞 <strong>Phone:</strong> 123-456-7890</p>
-      <p>📧 <strong>Email:</strong> info@sukasukachicken.com</p>
-      <p>📍 <strong>Address:</strong> Ayam Suka-Suka, Jl.Abdul.Ghani.Raya</p>
-      <p>⏰ <strong>Opening Hours:</strong> Monday - Saturday, 7 AM - 5 PM</p>
-    </section>
-  </main>
-</body>
+        <section id="reviews">
+          <h2 class="section-title">Reviews</h2>
+          <div class="review-grid">
+            <div class="review-card main-review">
+              <div class="review-header">
+                <div class="avatar-circle"></div>
+                <div>
+                  <strong>Mr. Lorem</strong>
+                  <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+                nec fermentum lorem. Sed nec nulla vitae leo tincidunt.
+              </p>
+            </div>
+
+            <!-- Empty cards for layout -->
+            <div class="review-card"></div>
+            <div class="review-card"></div>
+            <div class="review-card"></div>
+            <div class="review-card"></div>
+            <div class="review-card"></div>
+            <div class="review-card"></div>
+            <div class="review-card"></div>
+            <div class="review-card"></div>
+          </div>
+        </section>
+
+        <section id="contact">
+          <h2>Contact Us</h2>
+          <p>
+            Ready to experience the deliciousness? Place your order or get in
+            touch!
+          </p>
+          <p>📞 <strong>Phone:</strong> 123-456-7890</p>
+          <p>📧 <strong>Email:</strong> info@sukasukachicken.com</p>
+          <p>
+            📍 <strong>Address:</strong> Ayam Suka-Suka, Jl.Abdul.Ghani.Raya
+          </p>
+          <p>
+            ⏰ <strong>Opening Hours:</strong> Monday - Saturday, 7 AM - 5 PM
+          </p>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>

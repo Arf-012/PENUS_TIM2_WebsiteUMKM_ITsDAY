@@ -1,188 +1,153 @@
-@import url("https://fonts.googleapis.com/css2?family=Blaka&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-/* RESET & BASE */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fustat:wght@700&display=swap');
 
 body {
-  font-family: "Georgia", serif;
-  background-color: #fffef8;
+  margin: 0;
+  font-family: 'Fustat', sans-serif;
+  background-color: #f8f4ec;
   color: #333;
-  line-height: 1.6;
+  position: relative;
 }
 
-/* BACKGROUND "BUKU" */
 .background-book {
-  background: url('images/Background.jpg') no-repeat center center/cover;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -10;
-  opacity: 0.3;
-  filter: brightness(0.9) contrast(1.1);
+  background: url('images/Background.jpg') no-repeat center center/cover;
+  z-index: -1;
+  opacity: 0.6;
 }
 
-/* NAVBAR ATAS SEPERTI NOTEBOOK */
 .top-navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #fff8ee;
-  border-bottom: 2px solid #e2bcb7;
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fffbe7;
+  border: 2px solid #e0c087;
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.15);
+  padding: 1rem 2rem;
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Archivo Black", sans-serif;
+  rotate: -2deg;
+  border-radius: 8px;
+}
+
+.top-navbar::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 20%;
+  width: 60%;
+  height: 10px;
+  background: #d4aa70;
+  border-radius: 5px;
 }
 
 .top-navbar ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   list-style: none;
-  padding: 1rem 0;
+  padding: 0;
   margin: 0;
-  gap: 2rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .top-navbar li a {
   text-decoration: none;
-  color: #b23b3b;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  transition: color 0.2s ease;
+  color: #a55b1a;
 }
 
-.top-navbar li a:hover {
-  color: #ff6f61;
-}
-
-/* KONTAINER NOTEBOOK */
-.notebook-container {
-  max-width: 1000px;
-  margin: 6rem auto 3rem auto;
-  background: #fffefc;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
-  padding: 2rem;
-  position: relative;
-  z-index: 1;
-  font-family: "Georgia", serif;
-  background-image: linear-gradient(
-    to bottom,
-    transparent 95%,
-    #f5ece6 96%,
-    #f5ece6 100%
-  );
-  background-size: 100% 2.2rem;
-}
-
-/* JUDUL */
 .branding {
   text-align: center;
-  font-size: 2.8rem;
-  font-weight: bold;
-  padding: 1rem 0;
-  color: #b23b3b;
-  font-family: "Blaka", cursive;
-  margin-top: 1rem;
+  margin-top: 6rem;
+  font-family: 'Archivo Black', sans-serif;
 }
 
-/* SECTION */
-section {
-  padding: 2rem 0;
-  border-bottom: 1px dashed #d4c5c5;
+.notebook-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fffef9;
+  border: 3px solid #e6d8bd;
+  border-radius: 16px;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1);
 }
 
-/* JUDUL SECTION */
-h2 {
+.title-container h1 {
+  font-family: 'Archivo Black', sans-serif;
+  text-align: center;
   font-size: 2rem;
-  margin-bottom: 1rem;
-  font-family: "Poppins", sans-serif;
-  color: #a33333;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
-/* MENU ITEM */
+section h2 {
+  font-family: 'Archivo Black', sans-serif;
+  border-bottom: 2px dashed #e0c087;
+  padding-bottom: 0.5rem;
+}
+
 .menu-item {
   display: flex;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
 }
 
 .polaroid {
   background: white;
-  padding: 1rem;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-  width: 250px;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
   text-align: center;
-  transform: rotate(-2deg);
-  font-family: "Manrope", sans-serif;
-  flex-shrink: 0;
-  border: 1px solid #ddd;
 }
 
 .polaroid img {
-  width: 100%;
-  border-radius: 4px;
+  max-width: 100%;
+}
+.caption {
+  font-size: 0.9rem;
+  color: #666;
 }
 
-.polaroid .caption {
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-  color: #777;
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.description {
-  flex: 1;
-  font-family: "Manrope", sans-serif;
-  min-width: 280px;
+.review-card {
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+  padding: 1rem;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.description p {
-  line-height: 1.6;
-  color: #444;
+.main-review {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  background-color: #fffdf9;
+  border: 2px solid #ffdddd;
 }
 
-/* LIST DI FOOTER */
-ul {
-  padding-left: 1.5rem;
-  list-style: disc;
+.review-header {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
 }
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .top-navbar ul {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem 0;
-  }
-
-  .notebook-container {
-    margin: 7rem 1rem 3rem 1rem;
-    padding: 1rem;
-  }
-
-  .branding {
-    font-size: 2rem;
-  }
-
-  .menu-item {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .polaroid {
-    transform: rotate(0deg);
-    width: 80%;
-    max-width: 300px;
-  }
-
-  .description {
-    text-align: center;
-  }
+.avatar-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #ddd;
+  border-radius: 50%;
+}
+.stars {
+  font-size: 1rem;
+  color: gold;
 }
