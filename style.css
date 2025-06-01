@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Blaka&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Blaka&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+/* RESET & BASE */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,81 +8,104 @@
 }
 
 body {
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   background-color: #fffef8;
   color: #333;
+  line-height: 1.6;
 }
 
-.branding {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: bold;
-  padding: 1rem 0;
-  background-color: transparent;
-  color: #b23b3b;
-  font-family: 'Blaka', cursive;
-  z-index: 1000;
-  top: 0;
-}
-
-nav {
-  position: sticky;
+/* BACKGROUND "BUKU" */
+.background-book {
+  background: url('images/Background.jpg') no-repeat center center/cover;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #f4f1e9;
-  border-bottom: 2px solid #ccc;
-  z-index: 999;
-  overflow: hidden;
-  height: auto;
+  height: 100%;
+  z-index: -10;
+  opacity: 0.3;
+  filter: brightness(0.9) contrast(1.1);
 }
 
-nav ul {
+/* NAVBAR ATAS SEPERTI NOTEBOOK */
+.top-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff8ee;
+  border-bottom: 2px solid #e2bcb7;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.top-navbar ul {
   display: flex;
-  flex-direction: row; /* Ini yang memastikan item berjejer ke samping */
   justify-content: center;
   align-items: center;
   list-style: none;
   padding: 1rem 0;
   margin: 0;
+  gap: 2rem;
 }
 
-nav ul li {
-  padding: 0 1.5rem;
-  white-space: nowrap;
-}
-
-nav ul li a {
+.top-navbar li a {
   text-decoration: none;
-  color: #444;
-  font-weight: bold;
-  font-size: 1rem;
-  display: inline-block;
-  transition: transform 0.2s ease;
+  color: #b23b3b;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  transition: color 0.2s ease;
 }
 
-nav ul li a:hover {
-  transform: translateY(-2px);
+.top-navbar li a:hover {
+  color: #ff6f61;
 }
 
-main {
-  margin-left: 0;
-  padding-top: 80px;
-}
-
-section {
-  padding: 2rem;
-  border-bottom: 2px dashed #ccc;
+/* KONTAINER NOTEBOOK */
+.notebook-container {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 6rem auto 3rem auto;
+  background: #fffefc;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+  font-family: "Georgia", serif;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 95%,
+    #f5ece6 96%,
+    #f5ece6 100%
+  );
+  background-size: 100% 2.2rem;
 }
 
+/* JUDUL */
+.branding {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: bold;
+  padding: 1rem 0;
+  color: #b23b3b;
+  font-family: "Blaka", cursive;
+  margin-top: 1rem;
+}
+
+/* SECTION */
+section {
+  padding: 2rem 0;
+  border-bottom: 1px dashed #d4c5c5;
+}
+
+/* JUDUL SECTION */
 h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  color: #a33333;
 }
 
+/* MENU ITEM */
 .menu-item {
   display: flex;
   gap: 2rem;
@@ -97,8 +121,9 @@ h2 {
   width: 250px;
   text-align: center;
   transform: rotate(-2deg);
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   flex-shrink: 0;
+  border: 1px solid #ddd;
 }
 
 .polaroid img {
@@ -114,36 +139,36 @@ h2 {
 
 .description {
   flex: 1;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   min-width: 280px;
 }
 
 .description p {
   line-height: 1.6;
+  color: #444;
 }
 
+/* LIST DI FOOTER */
+ul {
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .branding h1 {
+  .top-navbar ul {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .notebook-container {
+    margin: 7rem 1rem 3rem 1rem;
+    padding: 1rem;
+  }
+
+  .branding {
     font-size: 2rem;
-  }
-
-  nav ul {
-    /* flex-direction: column; */ /* Baris ini DIKOMENTARI/DIHAPUS untuk menjaga navigasi horizontal */
-    padding: 0.5rem 0;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav ul li {
-    padding: 0.5rem 1rem;
-  }
-
-  nav ul li a {
-    font-size: 0.9rem;
-  }
-
-  main {
-    padding-top: 120px;
   }
 
   .menu-item {
