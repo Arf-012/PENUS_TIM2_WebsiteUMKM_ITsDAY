@@ -139,10 +139,11 @@ ul {
 }
 
 .review-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: row;
   gap: 1rem;
   margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
 .review-card {
@@ -150,7 +151,7 @@ ul {
   border: 1px solid #aaa;
   border-radius: 20px;
   padding: 1rem;
-  min-height: 150px;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
