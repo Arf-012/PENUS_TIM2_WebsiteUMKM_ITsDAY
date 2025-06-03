@@ -1,0 +1,98 @@
+// Perbaikan penulisan variabel
+const form = document.getElementById('contact-me'); // Ganti 'contact-from' ke 'contact-me' sesuai HTML Anda
+const nameInput = form.name;
+const emailInput = form.email;
+const messageInput = form.message;
+const successMsg = document.getElementById('success-message');
+
+const nameError = document.getElementById('name-error');
+const emailError = document.getElementById('email-error'); // Pastikan ID ini ada di HTML
+const messageError = document.getElementById('message-error'); // Pastikan ID ini ada di HTML
+
+function validateForm() {
+  let isValid = true;
+  
+  // Validasi Nama
+  const name = nameInput.value.trim();
+  if (name.length < 3) {
+    nameError.textContent = 'Nama minimal 3 karakter';
+    isValid = false;
+  } else {
+    nameError.textContent = '';
+  }
+  
+  // Validasi Email
+  const email = emailInput.value.trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    emailError.textContent = 'Email tidak valid';
+    isValid = false;
+  } else {
+    emailError.textContent = '';
+  }
+  
+  // Validasi Pesan
+  const message = messageInput.value.trim();
+  if (message.length < 10) {
+    messageError.textContent = 'Pesan minimal 10 karakter';
+    isValid = false;
+  } else {
+    messageError.textContent = '';
+  }
+  
+  return isValid;
+}
+
+// Tambahkan header penting
+emailjs.sendForm('service_5t9ol9k', 'template_anqlpjb', form, {
+  customHeaders: {
+    'X-Mailer': 'MyWebsiteContactForm/1.0',
+    'X-Priority': '1',
+    'Precedence': 'bulk'
+  }
+});
+
+// Hanya SATU event listener submit
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  if (!validateForm()) {
+    return; // Hentikan jika validasi gagal
+  }
+  
+  const btn = event.target.querySelector('button[type="submit"]');
+  
+  // Disable button selama pengiriman
+  btn.disabled = true;
+  btn.textContent = 'Mengirim...';
+  
+  // Kirim form menggunakan EmailJS
+  emailjs.sendForm('service_5t9ol9k', 'template_anqlpjb', this)
+    .then(function() {
+      successMsg.textContent = 'Pesan berhasil dikirim! Terima kasih.';
+      successMsg.style.display = 'block';
+      successMsg.style.color = ''; // Reset warna
+      form.reset();
+    }, function(error) {
+      successMsg.textContent = 'Gagal mengirim pesan. Silakan coba lagi.';
+      successMsg.style.color = '#ff3333';
+      successMsg.style.display = 'block';
+      console.error('Error:', error);
+    })
+    .finally(() => {
+      btn.disabled = false;
+      btn.innerHTML = '✉️ Kirim Pesan';
+    });
+});
+
+// Di form submission
+const today = new Date().toLocaleDateString('id-ID', {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+
+// Tambahkan ke parameter
+emailjs.sendForm('service_5t9ol9k', 'template_anqlpjb', form, {
+  date: today
+});

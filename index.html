@@ -117,7 +117,7 @@
           </div>
           <div class="menu-item">
             <div class="polaroid">
-              <img src="images/UMKM2.png" alt="Spicy Chicken" />
+              <img src="images/ICE_TEA.png" alt="Spicy Chicken" />
               <div class="caption">Sweet Iced Tea</div>
             </div>
             <div class="description">
@@ -212,6 +212,34 @@
             Ready to experience the deliciousness? Place your order or get in
             touch!
           </p>
+
+<section id="contact" aria-label="Contact section">
+    <h2>📬Contact Me</h2>
+    <form id="contact-me">
+        <label for="name">Nama lengkap</label>
+        <input type="text" name="name" id="name" placeholder="Nama Anda" aria-label="Nama Anda" required/>
+        <div class="error" id="name-error"></div>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email Anda..." aria-label="Email Anda" required/>
+        <div class="error" id="email-error"></div> <!-- Diubah dari id="email" -->
+
+        <label for="message">Pesan</label>
+        <textarea id="message" name="message" rows="4" placeholder="Tulis pesan Anda..." aria-label="Pesan Anda" required></textarea>
+        <div class="error" id="message-error"></div> <!-- Diubah dari id="email" -->
+
+        <button type="submit" aria-label="Kirim Pesan">✉️ Kirim Pesan</button>
+        <p class="success-msg" id="success-message" aria-live="polite"></p>
+    </form>
+
+             <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+                  <script>
+                    emailjs.init("V16Vii8WOvZHEG21r"); // Ganti dengan public key Anda
+                  </script>
+
+</section>
+            <p><strong>or you can also contact</strong></p>
+
           <p>📞 <strong>Phone:</strong> 123-456-7890</p>
           <p>📧 <strong>Email:</strong> info@sukasukachicken.com</p>
           <p>
@@ -223,5 +251,6 @@
         </section>
       </main>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
