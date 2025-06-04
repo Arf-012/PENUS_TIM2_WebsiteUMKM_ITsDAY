@@ -1,18 +1,16 @@
-// Perbaikan penulisan variabel
-const form = document.getElementById('contact-me'); // Ganti 'contact-from' ke 'contact-me' sesuai HTML Anda
+const form = document.getElementById('contact-me'); 
 const nameInput = form.name;
 const emailInput = form.email;
 const messageInput = form.message;
 const successMsg = document.getElementById('success-message');
 
 const nameError = document.getElementById('name-error');
-const emailError = document.getElementById('email-error'); // Pastikan ID ini ada di HTML
-const messageError = document.getElementById('message-error'); // Pastikan ID ini ada di HTML
+const emailError = document.getElementById('email-error'); 
+const messageError = document.getElementById('message-error'); 
 
 function validateForm() {
   let isValid = true;
   
-  // Validasi Nama
   const name = nameInput.value.trim();
   if (name.length < 3) {
     nameError.textContent = 'Nama minimal 3 karakter';
@@ -21,7 +19,6 @@ function validateForm() {
     nameError.textContent = '';
   }
   
-  // Validasi Email
   const email = emailInput.value.trim();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     emailError.textContent = 'Email tidak valid';
@@ -30,7 +27,6 @@ function validateForm() {
     emailError.textContent = '';
   }
   
-  // Validasi Pesan
   const message = messageInput.value.trim();
   if (message.length < 10) {
     messageError.textContent = 'Pesan minimal 10 karakter';
@@ -42,7 +38,6 @@ function validateForm() {
   return isValid;
 }
 
-// Tambahkan header penting
 emailjs.sendForm('service_5t9ol9k', 'template_anqlpjb', form, {
   customHeaders: {
     'X-Mailer': 'MyWebsiteContactForm/1.0',
@@ -51,26 +46,23 @@ emailjs.sendForm('service_5t9ol9k', 'template_anqlpjb', form, {
   }
 });
 
-// Hanya SATU event listener submit
 form.addEventListener('submit', function(event) {
   event.preventDefault();
   
   if (!validateForm()) {
-    return; // Hentikan jika validasi gagal
+    return; 
   }
   
   const btn = event.target.querySelector('button[type="submit"]');
   
-  // Disable button selama pengiriman
   btn.disabled = true;
   btn.textContent = 'Mengirim...';
   
-  // Kirim form menggunakan EmailJS
   emailjs.sendForm('service_5t9ol9k', 'template_anqlpjb', this)
     .then(function() {
       successMsg.textContent = 'Pesan berhasil dikirim! Terima kasih.';
       successMsg.style.display = 'block';
-      successMsg.style.color = ''; // Reset warna
+      successMsg.style.color = ''; 
       form.reset();
     }, function(error) {
       successMsg.textContent = 'Gagal mengirim pesan. Silakan coba lagi.';
@@ -84,7 +76,6 @@ form.addEventListener('submit', function(event) {
     });
 });
 
-// Di form submission
 const today = new Date().toLocaleDateString('id-ID', {
   weekday: 'long',
   year: 'numeric',
@@ -92,7 +83,6 @@ const today = new Date().toLocaleDateString('id-ID', {
   day: 'numeric'
 });
 
-// Tambahkan ke parameter
 emailjs.sendForm('service_5t9ol9k', 'template_anqlpjb', form, {
   date: today
 });

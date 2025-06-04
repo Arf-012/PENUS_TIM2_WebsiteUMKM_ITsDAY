@@ -246,3 +246,76 @@ footer {
     border-top: 1px solid #eee;
     margin-top: 2rem;
 }
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+  .top-navbar {
+    top: 1.5rem;
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    rotate: 0deg;
+  }
+
+  .top-navbar ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .branding {
+    margin-top: 5rem;
+    font-size: 1rem;
+  }
+
+  .notebook-container {
+    margin: 1rem;
+    padding: 1rem;
+    border-width: 2px;
+    border-radius: 10px;
+  }
+
+  .title-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .menu-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .polaroid {
+    width: 80%;
+    height: auto;
+    transform: none;
+  }
+
+  .description {
+    min-width: auto;
+    text-align: left;
+  }
+
+  .review-grid {
+    flex-direction: column;
+  }
+
+  .review-card {
+    width: 100%;
+  }
+
+  input,
+  textarea,
+  button {
+    font-size: 1rem;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+}
