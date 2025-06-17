@@ -377,3 +377,23 @@ footer {
     padding: 1rem;
   }
 }
+
+/* footer */
+footer {
+      background-color: white;
+      color: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    .footer-left {
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .footer-right img {
+      height: 60px; /* Sesuaikan tinggi logo */
+      object-fit: contain;
+    }
