@@ -1,6 +1,6 @@
 /***** CONFIG *****/
-const TOTAL_PAGES = 10;          // indeks maksimum
-const FLIP_MS     = 800;         // durasi 1 lembar
+const TOTAL_PAGES = 10;          
+const FLIP_MS     = 20;         
 const STEPS       = 20;
 
 /***** STATE *****/
@@ -19,23 +19,34 @@ function getChapterForPage(p) {
   return null;
 }
 
-// function getChapterForPage(p) {
-//   if (p === 0)             return "cover";
-//   if (p >= 1 && p <= 2)    return "1";
-//   if (p >= 3 && p <= 4)    return "2";
-//   if (p >= 5 && p <= 6)    return "3";
-//   if (p >= 7 && p <= 8)    return "4";
-//   if (p === 9)             return "5";
-//   if (p === 10)            return "back";
-//   return null;
-// }
+function getPageForSection(sectionId) {
+  switch (sectionId) {
+    case "about":   return 1;
+    case "menu":    return 2;
+    case "reviews": return 3;
+    case "contact": return 9;
+    default:        return 0;
+  }
+}
 
 function setActiveChapter(chId) {
-  document
-    .querySelectorAll(".chapter-btn")
-    .forEach(btn =>
-      btn.classList.toggle("active", btn.dataset.chapter === chId)
-    );
+  document.querySelectorAll(".chapter-btn").forEach(btn =>
+    btn.classList.toggle("active", btn.dataset.chapter === chId)
+  );
+
+  // Sinkronkan nav-tab juga
+  const sectionMap = {
+    "1": "about",
+    "2": "menu",
+    "3": "reviews",
+    "5": "contact"
+  };
+
+  const sectionId = sectionMap[chId];
+  document.querySelectorAll(".nav-tab").forEach(t =>
+    t.classList.toggle("active", t.dataset.section === sectionId)
+  );
+
   updateNavArrows();
 }
 
@@ -50,9 +61,9 @@ function animateFlip(pageEl, dir, done) {
   const perStep = FLIP_MS / STEPS;
   const timer = setInterval(() => {
     step++;
-    const rot = dir === 1                   // 1 = ke depan
-      ? Math.min(step * (200 / STEPS), 200) // 0→180°
-      : 180 - step * (180 / STEPS);         // 180→0°
+    const rot = dir === 1
+      ? Math.min(step * (200 / STEPS), 200)
+      : 180 - step * (180 / STEPS);
     pageEl.style.transform = `rotateY(${ -rot }deg)`;
     if (step >= STEPS) {
       clearInterval(timer);
@@ -75,11 +86,11 @@ function flipToPage(target) {
       return;
     }
     const pageIndex = dir === 1 ? currentPage : currentPage - 1;
-    const pageEl    = document.querySelector(`.page[data-page="${pageIndex}"]`);
+    const pageEl = document.querySelector(`.page[data-page="${pageIndex}"]`);
     animateFlip(pageEl, dir, () => {
       currentPage += dir;
       setActiveChapter(getChapterForPage(currentPage));
-      stepFlip();                 // recursive until done
+      stepFlip();
     });
   }
   stepFlip();
@@ -87,19 +98,37 @@ function flipToPage(target) {
 
 /***** UI BINDING *****/
 function bindUI() {
-  // tombol chapter
+  // Tombol chapter (opsional)
   document.querySelectorAll(".chapter-btn").forEach(btn =>
     btn.addEventListener("click", e =>
       flipToPage(+btn.dataset.target)
     )
   );
-  // panah
+
+  // Panah navigasi
   prevBtn.addEventListener("click", () => flipToPage(currentPage - 1));
   nextBtn.addEventListener("click", () => flipToPage(currentPage + 1));
+
+  // Bookmark Navigation
+  document.querySelectorAll(".nav-tab").forEach(tab => {
+    tab.addEventListener("click", (e) => {
+      document.querySelectorAll(".nav-tab").forEach(t => t.classList.remove("active"));
+      e.target.classList.add("active");
+
+      const sectionId = e.target.dataset.section;
+      const targetPage = getPageForSection(sectionId);
+      if (typeof targetPage === "number") {
+        flipToPage(targetPage);
+      }
+    });
+  });
 }
 
 /***** INIT *****/
 document.addEventListener("DOMContentLoaded", () => {
+  window.prevBtn = document.getElementById("prevBtn");
+  window.nextBtn = document.getElementById("nextBtn");
+
   bindUI();
   setActiveChapter("cover");
 });

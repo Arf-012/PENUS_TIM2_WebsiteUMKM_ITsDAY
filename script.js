@@ -315,3 +315,73 @@ navTabs.forEach((tab) => {
     }
   });
 });
+
+// pop up
+document.addEventListener('DOMContentLoaded', function() {
+    // Create popup elements
+    const popupOverlay = document.createElement('div');
+    popupOverlay.className = 'popup-overlay';
+    popupOverlay.id = 'contactPopup';
+    
+    const popupContent = document.createElement('div');
+    popupContent.className = 'popup-content';
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'popup-close';
+    closeBtn.innerHTML = '&times;';
+    closeBtn.setAttribute('aria-label', 'Tutup popup');
+    
+    // Get existing form and clone it
+    const existingForm = document.getElementById('contact-me');
+    const clonedForm = existingForm.cloneNode(true);
+    clonedForm.id = 'contact-me-popup';
+    
+    // Build popup structure
+    popupContent.appendChild(closeBtn);
+    popupContent.appendChild(clonedForm);
+    popupOverlay.appendChild(popupContent);
+    document.body.appendChild(popupOverlay);
+    
+    // Create trigger button (you can remove this if you already have one)
+    const triggerBtn = document.createElement('button');
+    triggerBtn.className = 'trigger-popup-btn';
+    triggerBtn.textContent = 'Hubungi Kami (Popup)';
+    existingForm.parentNode.insertBefore(triggerBtn, existingForm);
+    
+    // Toggle popup functions
+    function openPopup() {
+        popupOverlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+    
+    function closePopup() {
+        popupOverlay.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+    
+    // Event listeners
+    triggerBtn.addEventListener('click', openPopup);
+    closeBtn.addEventListener('click', closePopup);
+    
+    // Close when clicking outside
+    popupOverlay.addEventListener('click', function(e) {
+        if (e.target === popupOverlay) {
+            closePopup();
+        }
+    });
+    
+    // Close with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && popupOverlay.style.display === 'flex') {
+            closePopup();
+        }
+    });
+    
+    // Handle form submission in popup (optional)
+    clonedForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Your existing form handling will work here
+        // Then close the popup
+        setTimeout(closePopup, 1000); // Close after 1 second
+    });
+});
