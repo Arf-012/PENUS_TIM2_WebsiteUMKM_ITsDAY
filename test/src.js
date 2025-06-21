@@ -1,51 +1,61 @@
 /***** CONFIG *****/
-const TOTAL_PAGES = 10;          
-const FLIP_MS     = 20;         
-const STEPS       = 20;
+const TOTAL_PAGES = 10;
+const FLIP_MS = 600;
+const STEPS = 20;
 
 /***** STATE *****/
 let currentPage = 0;
-let isFlipping  = false;
+let isFlipping = false;
 
 /***** HELPERS *****/
 function getChapterForPage(p) {
-  if (p === 0)             return "cover";   // Cover
-  if (p >= 1 && p <= 3)    return "1";       // Chapter 1
-  if (p >= 4 && p <= 5)    return "2";       // Chapter 2
-  if (p >= 6 && p <= 7)    return "3";       // Chapter 3
-  if (p === 8)             return "4";       // Epilogue
-  if (p === 9)             return "5";       // Contact
-  if (p === 10)            return "back";    // Back cover
+  if (p === 0) return "cover"; // Cover
+  if (p >= 1 && p <= 3) return "1"; // Chapter 1
+  if (p >= 4 && p <= 5) return "2"; // Chapter 2
+  if (p >= 6 && p <= 7) return "3"; // Chapter 3
+  if (p === 8) return "4"; // Epilogue
+  if (p === 9) return "5"; // Contact
+  if (p === 10) return "back"; // Back cover
   return null;
 }
 
 function getPageForSection(sectionId) {
   switch (sectionId) {
-    case "about":   return 1;
-    case "menu":    return 2;
-    case "reviews": return 3;
-    case "contact": return 9;
-    default:        return 0;
+    case "about":
+      return 1;
+    case "menu":
+      return 2;
+    case "reviews":
+      return 3;
+    case "contact":
+      return 9;
+    default:
+      return 0;
   }
 }
 
 function setActiveChapter(chId) {
-  document.querySelectorAll(".chapter-btn").forEach(btn =>
-    btn.classList.toggle("active", btn.dataset.chapter === chId)
-  );
+  document
+    .querySelectorAll(".chapter-btn")
+    .forEach((btn) =>
+      btn.classList.toggle("active", btn.dataset.chapter === chId)
+    );
+  (btn) => btn.classList.toggle("active", btn.dataset.chapter === chId);
 
   // Sinkronkan nav-tab juga
   const sectionMap = {
-    "1": "about",
-    "2": "menu",
-    "3": "reviews",
-    "5": "contact"
+    1: "about",
+    2: "menu",
+    3: "reviews",
+    5: "contact",
   };
 
   const sectionId = sectionMap[chId];
-  document.querySelectorAll(".nav-tab").forEach(t =>
-    t.classList.toggle("active", t.dataset.section === sectionId)
-  );
+  document
+    .querySelectorAll(".nav-tab")
+    .forEach((t) =>
+      t.classList.toggle("active", t.dataset.section === sectionId)
+    );
 
   updateNavArrows();
 }
@@ -61,10 +71,11 @@ function animateFlip(pageEl, dir, done) {
   const perStep = FLIP_MS / STEPS;
   const timer = setInterval(() => {
     step++;
-    const rot = dir === 1
-      ? Math.min(step * (200 / STEPS), 200)
-      : 180 - step * (180 / STEPS);
-    pageEl.style.transform = `rotateY(${ -rot }deg)`;
+    const rot =
+      dir === 1
+        ? Math.min(step * (200 / STEPS), 200)
+        : 180 - step * (180 / STEPS);
+    pageEl.style.transform = `rotateY(${-rot}deg)`;
     if (step >= STEPS) {
       clearInterval(timer);
       pageEl.style.transform = "";
@@ -99,20 +110,22 @@ function flipToPage(target) {
 /***** UI BINDING *****/
 function bindUI() {
   // Tombol chapter (opsional)
-  document.querySelectorAll(".chapter-btn").forEach(btn =>
-    btn.addEventListener("click", e =>
-      flipToPage(+btn.dataset.target)
-    )
-  );
+  document
+    .querySelectorAll(".chapter-btn")
+    .forEach((btn) =>
+      btn.addEventListener("click", (e) => flipToPage(+btn.dataset.target))
+    );
 
   // Panah navigasi
   prevBtn.addEventListener("click", () => flipToPage(currentPage - 1));
   nextBtn.addEventListener("click", () => flipToPage(currentPage + 1));
 
   // Bookmark Navigation
-  document.querySelectorAll(".nav-tab").forEach(tab => {
+  document.querySelectorAll(".nav-tab").forEach((tab) => {
     tab.addEventListener("click", (e) => {
-      document.querySelectorAll(".nav-tab").forEach(t => t.classList.remove("active"));
+      document
+        .querySelectorAll(".nav-tab")
+        .forEach((t) => t.classList.remove("active"));
       e.target.classList.add("active");
 
       const sectionId = e.target.dataset.section;
@@ -132,7 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
   bindUI();
   setActiveChapter("cover");
 });
-
 
 // ====================== CONFIGURATION ======================
 const EMAILJS_CONFIG = {
