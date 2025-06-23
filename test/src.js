@@ -1,5 +1,5 @@
 /***** CONFIG *****/
-const TOTAL_PAGES = 10;
+const TOTAL_PAGES = 5; // 0–5 (karena indeks halaman dari 0–5, berarti total 6 halaman)
 const FLIP_MS = 600;
 const STEPS = 20;
 
@@ -9,18 +9,28 @@ let isFlipping = false;
 
 /***** HELPERS *****/
 function getChapterForPage(p) {
-  if (p === 0) return "cover"; // Cover
-  if (p >= 1 && p <= 3) return "1"; // Chapter 1
-  if (p >= 4 && p <= 5) return "2"; // Chapter 2
-  if (p >= 6 && p <= 7) return "3"; // Chapter 3
-  if (p === 8) return "4"; // Epilogue
-  if (p === 9) return "5"; // Contact
-  if (p === 10) return "back"; // Back cover
-  return null;
+  switch (p) {
+    case 0:
+      return "cover";
+    case 1:
+      return "1";
+    case 2:
+      return "2";
+    case 3:
+      return "3";
+    case 4:
+      return "4";
+    case 5:
+      return "back";
+    default:
+      return null;
+  }
 }
 
 function getPageForSection(sectionId) {
   switch (sectionId) {
+    case "cover":
+      return 0;
     case "about":
       return 1;
     case "menu":
@@ -28,41 +38,41 @@ function getPageForSection(sectionId) {
     case "reviews":
       return 3;
     case "contact":
-      return 9;
+      return 4;
+    case "back":
+      return 5;
     default:
       return 0;
   }
 }
 
 function setActiveChapter(chId) {
-  document
-    .querySelectorAll(".chapter-btn")
-    .forEach((btn) =>
-      btn.classList.toggle("active", btn.dataset.chapter === chId)
-    );
-  (btn) => btn.classList.toggle("active", btn.dataset.chapter === chId);
+  // Highlight tombol berdasarkan data-chapter
+  document.querySelectorAll(".chapter-btn").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.chapter === chId);
+  });
 
-  // Sinkronkan nav-tab juga
+  // Sinkronisasi data-section juga
   const sectionMap = {
+    cover: "cover",
     1: "about",
     2: "menu",
     3: "reviews",
-    5: "contact",
+    4: "contact",
+    back: "back",
   };
 
   const sectionId = sectionMap[chId];
-  document
-    .querySelectorAll(".nav-tab")
-    .forEach((t) =>
-      t.classList.toggle("active", t.dataset.section === sectionId)
-    );
+  document.querySelectorAll(".nav-tab").forEach((t) => {
+    t.classList.toggle("active", t.dataset.section === sectionId);
+  });
 
   updateNavArrows();
 }
 
 function updateNavArrows() {
-  prevBtn.disabled = currentPage === 0;
-  nextBtn.disabled = currentPage === TOTAL_PAGES;
+  document.getElementById("prevBtn").disabled = currentPage === 0;
+  document.getElementById("nextBtn").disabled = currentPage === TOTAL_PAGES;
 }
 
 /***** ANIMATION CORE *****/
@@ -104,38 +114,37 @@ function flipToPage(target) {
       stepFlip();
     });
   }
+
   stepFlip();
 }
 
-/***** UI BINDING *****/
-function bindUI() {
-  // Tombol chapter (opsional)
-  document
-    .querySelectorAll(".chapter-btn")
-    .forEach((btn) =>
-      btn.addEventListener("click", (e) => flipToPage(+btn.dataset.target))
-    );
+/***** EVENT LISTENERS *****/
+document.getElementById("prevBtn").addEventListener("click", () => {
+  if (currentPage > 0) {
+    flipToPage(currentPage - 1);
+  }
+});
 
-  // Panah navigasi
-  prevBtn.addEventListener("click", () => flipToPage(currentPage - 1));
-  nextBtn.addEventListener("click", () => flipToPage(currentPage + 1));
+document.getElementById("nextBtn").addEventListener("click", () => {
+  if (currentPage < TOTAL_PAGES) {
+    flipToPage(currentPage + 1);
+  }
+});
 
-  // Bookmark Navigation
-  document.querySelectorAll(".nav-tab").forEach((tab) => {
-    tab.addEventListener("click", (e) => {
-      document
-        .querySelectorAll(".nav-tab")
-        .forEach((t) => t.classList.remove("active"));
-      e.target.classList.add("active");
-
-      const sectionId = e.target.dataset.section;
-      const targetPage = getPageForSection(sectionId);
-      if (typeof targetPage === "number") {
-        flipToPage(targetPage);
-      }
-    });
+// Klik tab navigasi (bookmark)
+document.querySelectorAll(".chapter-btn").forEach((tab) => {
+  tab.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetPage = parseInt(tab.dataset.target);
+    if (!isNaN(targetPage)) {
+      flipToPage(targetPage);
+    }
   });
-}
+});
+
+// Inisialisasi awal
+setActiveChapter("cover");
+updateNavArrows();
 
 /***** INIT *****/
 document.addEventListener("DOMContentLoaded", () => {
