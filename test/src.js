@@ -1,6 +1,6 @@
 /***** CONFIG *****/
 const TOTAL_PAGES = 5; // 0–5 (karena indeks halaman dari 0–5, berarti total 6 halaman)
-const FLIP_MS = 600;
+const FLIP_MS = 100;
 const STEPS = 20;
 
 /***** STATE *****/

@@ -6,16 +6,15 @@
 
 body {
   font-family: "Georgia", serif;
-  width: 100%;
-  height: 100%;
-  background: url("Background.png") no-repeat center;
-  overflow: hidden;
+  min-height: 100vh;
+  background: url("Background.png") no-repeat center fixed;
+  background-size: cover;
 }
 
 /* Navbar */
 .bookmark-nav {
   position: fixed;
-  top: 0;
+  top: -15px;
   left: 0;
   right: 0;
   height: 60px;
@@ -33,7 +32,7 @@ body {
   writing-mode: vertical-rl;
   transform-origin: left center;
   background-color: #28a745;
-  clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 20% 100%);
   transition: all 0.3s ease-in-out;
   color: white;
   font-weight: bold;
@@ -287,6 +286,7 @@ body {
   margin: 0 auto;
   background: #f6fcff;
   border-radius: 0 8px 8px 0;
+  position: relative;
 }
 
 
@@ -439,12 +439,40 @@ body {
 }
 
 #prevBtn {
-  order: -1;
+  position: absolute;
+  left: -90px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #nextBtn {
-  order: 1;
+  position: absolute;
+  right: -90px;
+  top: 50%;
+  transform: translateY(-50%);
 }
+
+ /* RESPONSIF: ubah ke arah vertikal saat ukuran layar kecil */
+@media (max-width: 468px) {
+  #prevBtn,
+  #nextBtn {
+    position: absolute;
+    left: 20%;
+    transform: translateX(-50%);
+  }
+
+  #prevBtn {
+    top: calc(100% + 10px); 
+    order: 1;
+  }
+
+  #nextBtn {
+    top: calc(100% + 10px);
+    left: 80%;
+    order: 1;
+  }
+}
+
 
 form {
   display: flex;
@@ -520,11 +548,23 @@ button:hover {
   text-shadow: none;
 }
 
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
+  .body {
+    background: no-repeat center/no-repeat;
+  }
+  
   .book {
     width: 300px;
     height: 450px;
+  }
+
+  .bookmark-nav {
+    top: -30px;
+    height: 70px;
+    gap: 10px;
   }
 
   .page-content {
