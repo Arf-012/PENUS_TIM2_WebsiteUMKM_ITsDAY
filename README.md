@@ -1,10 +1,10 @@
-Halo.
+## Halo.
 
 Kami dari Tim 2 SMK Pelita Nusantara patut mempresentasikan website original buatan kami.
 Bertema franchise UMKM Suka-Suka Chicken, website ini ditujui untuk mengikuti lomba Website UMKM IT's Day
 yang diselanggarakan oleh Jakarta Global University.
 
-Selamat melihat.
+## Selamat melihat.
 
 Nama UMKM	: Suka-Suka Chicken
 
@@ -29,15 +29,21 @@ Mungkin website-nya terlalu kompleks untuk dipakai, mungkin website-nya tidak me
 di website lain-nya. Tetapi, yang tentu, website kita sangat seru untuk dipakai dan dilihat. Itulah, mungkin,
 jawaban saya atas konsep website-nya.
 
-Fitur Keunggulan :
-	- Website style buku
-	- Navbar dan UI Wesbite yang unik
-	- Animasi navbar unik
-	- Sistem pesan yang tersambung ke EmailJS
+## Fitur Keunggulan
+- Website style buku
+- Navbar dan UI Wesbite yang unik
+- Animasi navbar unik
+- Sistem pesan yang tersambung ke EmailJS
 
-Teknologi yang digunakan :
-	- HTML
-	- CSS
-	- JS
-	- CDNJS
-	- Figma
+## Teknologi Dipakai
+- HTML
+- CSS
+- JS
+- CDNJS
+- Figma
+
+## Authors
+
+- [Arf-012](https://github.com/Arf-012) - Frontend Developer
+- [Ozan1123](https://github.com/Ozan1123) - Frontend Developer
+- [dacodpla](https://github.com/dacodpla) - UI/UX Designer
