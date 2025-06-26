@@ -528,9 +528,10 @@ body {
 }
 
 .menu-name {
-  font-family: "Archivo Black", sans-serif;
+  font-family: "Fustat", sans-serif;
   font-size: var(--font-xl);
   font-weight: 800;
+  color: var(--accent-orange);
   margin-bottom: 5px;
   transform: translateY(15px);
   transition: transform var(--transition-fast);

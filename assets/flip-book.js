@@ -1,6 +1,6 @@
 /***** CONFIG *****/
 const TOTAL_PAGES = 6;
-const FLIP_MS = 320;
+const FLIP_MS = 20;
 const STEPS = 20;
 
 /***** STATE MANAGEMENT *****/
