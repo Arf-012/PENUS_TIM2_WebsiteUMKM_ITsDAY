@@ -1,283 +1,358 @@
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Suka Suka Chicken</title>
-      <link rel="stylesheet" href="style.css" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fustat:wght@700&display=swap"
-        rel="stylesheet"
-      />
-    </head>
-    <body>
-      <div class="background-book"></div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Schoolbell&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Suka-Suka Chicken</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="bookmark-nav">
+        <a
+          href="#about"
+          class="nav-tab chapter-btn"
+          data-section="about"
+          data-chapter="1"
+          data-target="1"
+          id="abouts"
+          >about</a
+        >
+        <a
+          href="#menu"
+          class="nav-tab chapter-btn"
+          data-section="menu"
+          data-chapter="2"
+          data-target="2"
+          id="menus"
+          >menu</a
+        >
+        <a
+          href="#reviews"
+          class="nav-tab chapter-btn"
+          data-section="reviews"
+          data-chapter="5"
+          data-target="5"
+          id="review"
+          >review</a
+        >
+        <a
+          href="#contact"
+          class="nav-tab chapter-btn"
+          data-section="contact"
+          data-chapter="6"
+          data-target="6"
+          id="contacts"
+          >contact</a
+        >
+      </nav>
 
-      <div class="branding">
-        <h1>Suka Suka Chicken 🍗</h1>
-      </div>
+      <main class="main-content">
+        <div class="book-container">
+          <button class="nav-btn" id="prevBtn">←</button>
+          <div class="book" id="book">
+            <div class="book-spine"></div>
 
-      <div class="main-container">
-        <nav class="bookmark-nav">
-          <a href="#about" class="nav-tab active" data-section="about">About</a>
-          <a href="#menu" class="nav-tab" data-section="menu">Menu</a>
-          <a href="#reviews" class="nav-tab" data-section="reviews">Reviews</a>
-          <a href="#contact" class="nav-tab" data-section="contact">Contact</a>
-        </nav>
+            <div class="page cover-page" data-page="0" style="--page-index: 0">
+              <div class="page-content">
+                <img src="img/SukaSukaLogo.png" class="image-cover" />
+                <p class="cover-subtitle">The Menu</p>
+                <p class="cover-author">by Penus Tim 2</p>
+              </div>
+            </div>
 
-        <div class="notebook-container">
-          <div class="title-container">
-            <h1>Welcome to this heartwarming Place ❤️</h1>
+            <div class="page" data-page="1" style="--page-index: 1">
+              <h2 class="page-title">Tentang Kami</h2>
+              <div class="page-content">
+                <div class="page-text">
+                  Didirikan pada tahun 2019, Suka-Suka Chicken merupakan standar
+                  industri terkemuka dalam teknologi Ayam Goreng. Memadukan
+                  kualitas buatan tangan, dengan efisiensi dalam setiap sajian
+                  kelezatan ayam gorengnya. Didirikan oleh seorang ibu dan
+                  putranya, Suka-Suka Chicken menghargai tradisi keluarga
+                  klasik, bersama dengan makanan yang lezat.
+                </div>
+                <div class="page-number">
+                  1
+                  <img
+                    src="img/LOGO ITS DAY (ONLY IT).png"
+                    class="footer-img"
+                  />
+                  <img src="img/Logo PENUS Stroke.png" class="footer-img" />
+                </div>
+              </div>
+            </div>
+
+            <div class="page" data-page="2" style="--page-index: 2">
+              <h2 class="page-title">Makanan</h2>
+              <div class="page-content">
+                <div class="page-text menu-gallery">
+                  <div class="image-container">
+                    <img src="img/UMKM1.png" class="image-one" />
+                    <div class="image-overlay">
+                      <h3 class="menu-name">Paket Ayam Saus Lengkap</h3>
+                      <p class="menu-price">15K</p>
+                    </div>
+                  </div>
+
+                  <div class="image-container">
+                    <img src="img/UMKM2.png" class="image-one" />
+                    <div class="image-overlay">
+                      <h3 class="menu-name">Chicken Kentucky</h3>
+                      <p class="menu-price">8.5K</p>
+                    </div>
+                  </div>
+
+                  <div class="image-container">
+                    <img src="img/UMKM4.png" class="image-one" />
+                    <div class="image-overlay">
+                      <h3 class="menu-name">Nasi</h3>
+                      <p class="menu-price">3K</p>
+                    </div>
+                  </div>
+
+                  <div class="image-container">
+                    <img src="img/UMKM6.png" class="image-one" />
+                    <div class="image-overlay">
+                      <h3 class="menu-name">Hot Chicken</h3>
+                      <p class="menu-price">12K</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="page-number">
+                  2
+                  <img
+                    src="img/LOGO ITS DAY (ONLY IT).png"
+                    class="footer-img"
+                  />
+                  <img src="img/Logo PENUS Stroke.png" class="footer-img" />
+                </div>
+              </div>
+            </div>
+
+            <div class="page" data-page="3" style="--page-index: 3">
+              <h2 class="page-title">Minuman</h2>
+              <div class="page-content">
+                <div class="page-text menu-gallery">
+                  <div class="image-container">
+                    <img src="img/UMKM5.png" class="image-one" />
+                    <div class="image-overlay">
+                      <h3 class="menu-name">Ice Tea Poci</h3>
+                      <p class="menu-price">5K</p>
+                    </div>
+                  </div>
+
+                  <div class="image-container">
+                    <img src="img/UMKM7.png" class="image-one" />
+                    <div class="image-overlay">
+                      <h3 class="menu-name">Ice Tea Macha</h3>
+                      <p class="menu-price">7.5K</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="page-number">
+                  3
+                  <img
+                    src="img/LOGO ITS DAY (ONLY IT).png"
+                    class="footer-img"
+                  />
+                  <img src="img/Logo PENUS Stroke.png" class="footer-img" />
+                </div>
+              </div>
+            </div>
+
+            <div class="page" data-page="4" style="--page-index: 4">
+              <h2 class="page-title">Saus</h2>
+              <div class="page-content">
+                <div class="page-text menu-gallery">
+                  <div class="image-container">
+                    <img src="img/UMKM3.png" class="image-one" />
+                    <div class="image-overlay">
+                      <h3 class="menu-name">Saus BBQ</h3>
+                      <p class="menu-price">4K</p>
+                    </div>
+                  </div>
+
+                  <div class="image-container">
+                    <img src="img/UMKM8.png" class="image-one" />
+                    <div class="image-overlay">
+                      <h3 class="menu-name">Saus Keju</h3>
+                      <p class="menu-price">4K</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="page-number">
+                  4
+                  <img
+                    src="img/LOGO ITS DAY (ONLY IT).png"
+                    class="footer-img"
+                  />
+                  <img src="img/Logo PENUS Stroke.png" class="footer-img" />
+                </div>
+              </div>
+            </div>
+
+            <div class="page" data-page="5" style="--page-index: 5">
+              <h2 class="page-title">Reviews</h2>
+              <div class="page-content">
+                <div class="review-grid">
+                  <div class="review-card main-review">
+                    <div class="review-header">
+                      <div class="avatar-circle">
+                        <img src="img/Nita Chintia.png" />
+                      </div>
+                      <div>
+                        <strong>Nita Chintia</strong>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                      </div>
+                    </div>
+                    <p>
+                      Sukasuka fried chicken, dari awal buka sampai sekarang
+                      rasa,tekstur, tetap konsisten. Apa lagi sekarang ada ayam
+                      geprek yg debes banget. Sambel nya mantap bensu kalah si
+                      klo kata gw. Langganan beli di cabang puspa raya. Sambel
+                      nya ga pelit, malah banyak... Toppppp
+                    </p>
+                  </div>
+                </div>
+
+                <div class="review-grid">
+                  <div class="review-card main-review">
+                    <div class="review-header">
+                      <div class="avatar-circle">
+                        <img src="img/akmall.png" />
+                      </div>
+                      <div>
+                        <strong>akmall</strong>
+                        <div class="stars">⭐⭐⭐</div>
+                      </div>
+                    </div>
+                    <p>
+                      sambel geprek nya makin hari makin dikit banget anjay 😓
+                      Makanan: 3 Layanan: 3 Suasana: 3
+                    </p>
+                  </div>
+                </div>
+
+                <div class="review-grid">
+                  <div class="review-card main-review">
+                    <div class="review-header">
+                      <div class="avatar-circle">
+                        <img src="img/Firza Intania.png" />
+                      </div>
+                      <div>
+                        <strong>Firza Intania</strong>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                      </div>
+                    </div>
+                    <p>
+                      sambel gepreknyaaa enaakk Makanan: 5 Layanan: 5 Suasana: 5
+                    </p>
+                  </div>
+                </div>
+
+                <div class="page-number">
+                  5
+                  <img
+                    src="img/LOGO ITS DAY (ONLY IT).png"
+                    class="footer-img"
+                  />
+                  <img src="img/Logo PENUS Stroke.png" class="footer-img" />
+                </div>
+              </div>
+            </div>
+
+            <div class="page" data-page="6" style="--page-index: 6">
+              <h2 class="page-title">Hubungi Kami</h2>
+              <div class="page-content">
+                <div class="page-text">
+                  <section id="contact" class="section-container">
+                    <p>
+                      Ada keluhan? Ingin mengirim pesan kepada kami? Hubungi
+                      kami sekarang!
+                    </p>
+                    <br />
+
+                    <form id="contact-me">
+                      <label for="name">Nama lengkap</label>
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Nama Anda"
+                        aria-label="Nama Anda"
+                        required
+                      />
+                      <div class="error" id="name-error"></div>
+                      <label for="email">Email</label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Email Anda..."
+                        aria-label="Email Anda"
+                        required
+                      />
+                      <div class="error" id="email"></div>
+                      <label for="message">Pesan</label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows="4"
+                        placeholder="Tulis pesan Anda..."
+                        aria-label="Email Anda"
+                        required
+                      ></textarea>
+                      <div class="error" id="email"></div>
+                      <button type="submit" aria-label="Kirim Pesan">
+                        ✉ Kirim Pesan
+                      </button>
+                      <p
+                        class="success-msg"
+                        id="success-message"
+                        aria-live="polite"
+                      ></p>
+
+                      <div class="page-number">
+                        6
+                        <img
+                          src="img/LOGO ITS DAY (ONLY IT).png"
+                          class="footer-img"
+                        />
+                        <img
+                          src="img/Logo PENUS Stroke.png"
+                          class="footer-img"
+                        />
+                      </div>
+                    </form>
+                  </section>
+                </div>
+              </div>
+            </div>
           </div>
-          <main>
-            <section id="about" class="section-container show">
-              <h2>About</h2>
-              <p>
-                  Founded in 2019, Suka-Suka Chicken is a leading industry standard
-                  in Fried Chicken technology. Combining handmade quality, with
-                  efficiency in every piece of fried deliciousness. Founded by a
-                  mother and her son, Suka-Suka Chicken values classic family
-                  tradition, along with all-around good food.
-              </p>
-            </section>
-            <section id="menu" class="content-section section-container">
-              <h2>Main Course</h2>
-              <div class="menu-item">
-                <div class="polaroid">
-                  <img src="images/UMKM1.png" alt="Crispy Chicken" />
-                  <div class="caption">Paket Lengkap Crispy Chicken</div>
-                </div>
-                <div class="description">
-                  <p>
-                    Juicy, Crispy, Fresh Fried Chicken, served with a portion of
-                    rice, along with our signature cheese sauce and spicy korean
-                    sauce. <br />
-                    <b>13K</b>
-                  </p>
-                </div>
-              </div>
-              <div class="menu-item">
-                <div class="polaroid">
-                  <img src="images/UMKM6.png" alt="Spicy Chicken" />
-                  <div class="caption">Spicy Chicken</div>
-                </div>
-                <div class="description">
-                  <p>
-                    Our Original Crispy Fried Chicken, drenched with our special
-                    spicy korean sauce. <br />
-                    <b>10K</b>
-                  </p>
-                </div>
-              </div>
-              <div class="menu-item">
-                <div class="polaroid">
-                  <img src="images/UMKM2.png" alt="Spicy Chicken" />
-                  <div class="caption">Fried Chicken</div>
-                </div>
-                <div class="description">
-                  <p>
-                    Our Original Fried Chicken, handmade with our secret blend of
-                    spices. <br />
-                    <b>8,5K</b>
-                  </p>
-                </div>
-              </div>
-              <div class="menu-item">
-                <div class="polaroid">
-                  <img src="images/UMKM8.png" alt="Spicy Chicken" />
-                  <div class="caption">Cheese Sauce</div>
-                </div>
-                <div class="description">
-                  <p>
-                    Cheese Sauce to accompany your Fried Chicken with a bit of
-                    dairy savouryness. <br />
-                    <b>4K</b>
-                  </p>
-                </div>
-              </div>
-              <div class="menu-item">
-                <div class="polaroid">
-                  <img src="images/UMKM3.png" alt="Spicy Chicken" />
-                  <div class="caption">Spicy Korean Sauce</div>
-                </div>
-                <div class="description">
-                  <p>
-                    A sweet and spicy sauce from our friends up north to go along
-                    with your Fried Chicken. <br />
-                    <b>4K</b>
-                  </p>
-                </div>
-              </div>
-              <div class="menu-item">
-                <div class="polaroid">
-                  <img src="images/UMKM4.png" alt="Spicy Chicken" />
-                  <div class="caption">White Rice</div>
-                </div>
-                <div class="description">
-                  <p>
-                    White Rice sourced from local rice farmers. <br />
-                    <b>3K</b>
-                  </p>
-                </div>
-              </div>
-              <div class="menu-item">
-                <div class="polaroid">
-                  <img src="images/UMKM5.png" alt="Spicy Chicken" />
-                  <div class="caption">Sweet Iced Tea</div>
-                </div>
-                <div class="description">
-                  <p>
-                    The sweet nectar of domestically-sourced leaves, with ice and
-                    sugar. <br />
-                    <b>5K</b>
-                  </p>
-                </div>
-              </div>
-              <div class="menu-item">
-                <div class="polaroid">
-                  <img src="images/UMKM7.png" alt="Spicy Chicken" />
-                  <div class="caption">Iced Matcha Tea</div>
-                </div>
-                <div class="description">
-                  <p>
-                    The refreshing oriental flavors of Japan, with ice.<br />
-                    <b>17K</b>
-                  </p>
-                </div>
-              </div>
-            </section>
-            <section id="reviews" class="section-container">
-              <h2 class="section-title">Reviews</h2>
-              <div class="review-grid">
-                <div class="review-card main-review">
-                  <div class="review-header">
-                    <div class="avatar-circle"></div>
-                    <div>
-                      <strong>Mr. Lorem</strong>
-                      <div class="stars">⭐⭐⭐⭐⭐</div>
-                    </div>
-                  </div>
-                  <p>Incredible food and service!!!! 👍👍👍</p>
-                </div>
-              </div>
-              <div class="review-grid">
-                <div class="review-card main-review">
-                  <div class="review-header">
-                    <div class="avatar-circle"></div>
-                    <div>
-                      <strong>Mrs. Ipsum</strong>
-                      <div class="stars">⭐⭐⭐⭐⭐</div>
-                    </div>
-                  </div>
-                  <p>The waitress was very kind and the food is good.</p>
-                </div>
-              </div>
-              <div class="review-grid">
-                <div class="review-card main-review">
-                  <div class="review-header">
-                    <div class="avatar-circle"></div>
-                    <div>
-                      <strong>M. Fikri</strong>
-                      <div class="stars">⭐⭐⭐⭐⭐</div>
-                    </div>
-                  </div>
-                  <p>
-                    Place was clean, food is good. Ordered the spicy chicken, no
-                    complains.
-                  </p>
-                </div>
-              </div>
-              <div class="review-grid">
-                <div class="review-card main-review">
-                  <div class="review-header">
-                    <div class="avatar-circle"></div>
-                    <div>
-                      <strong>Lana</strong>
-                      <div class="stars">⭐⭐⭐⭐⭐</div>
-                    </div>
-                  </div>
-                  <p>5 Stars!!! the waiter was very handsome!</p>
-                </div>
-              </div>
-              <div class="review-grid">
-                <div class="review-card main-review">
-                  <div class="review-header">
-                    <div class="avatar-circle"></div>
-                    <div>
-                      <strong>A. Zidan</strong>
-                      <div class="stars">⭐⭐⭐⭐⭐</div>
-                    </div>
-                  </div>
-                  <p>My friend works here.</p>
-                </div>
-              </div>
-            </section>
-            <section id="contact" class="section-container">
-              <h2>Contact Us</h2>
-              <p>
-                Ready to experience the deliciousness? Place your order or get in
-                touch!
-              </p>
-              <section id="contact" aria-label="Contact section">
-                <h2>📬Contact Me</h2>
-                <form id="contact-me">
-                  <label for="name">Nama lengkap</label>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Nama Anda"
-                    aria-label="Nama Anda"
-                    required
-                  />
-                  <div class="error" id="name-error"></div>
-                  <label for="email">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Email Anda..."
-                    aria-label="Email Anda"
-                    required
-                  />
-                  <div class="error" id="email"></div>
-                  <label for="message">Pesan</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="4"
-                    placeholder="Tulis pesan Anda..."
-                    aria-label="Email Anda"
-                    required
-                  ></textarea>
-                  <div class="error" id="email"></div>
-                  <button type="submit" aria-label="Kirim Pesan">
-                    ✉️ Kirim Pesan
-                  </button>
-                  <p
-                    class="success-msg"
-                    id="success-message"
-                    aria-live="polite"
-                  ></p>
-                </form>
-              </section>
-            </section>
-          </main>
+          <button class="nav-btn" id="nextBtn">→</button>
         </div>
-      </div>
+      </main>
 
-      <footer>
-        <div class="footer-left">
-        Jl. Nyoret wqerwqwe<br>
-        rt. 03/04 waduh Jln.<br>
-        raya bogor km. 63<br><br>
-        +23132323132
-      </div>
-      <div class="footer-right">
-        <img src="logo.png" alt="Logo It's Day">
-      </div>
-      </footer>
-
-      <script src="script.js"></script>
-    </body>
-  </html>
+      <script type="module" src="main.js"></script>
+    </div>
+  </body>
+</html>

@@ -6,9 +6,6 @@ const EMAILJS_CONFIG = {
   RECEIVER_EMAIL: "umkmtes0@gmail.com",
 };
 
-// ====================== MAIN EXECUTION ======================
-document.addEventListener("DOMContentLoaded", initializeEmailSystem);
-
 // ====================== CORE FUNCTIONS ======================
 async function initializeEmailSystem() {
   try {
@@ -97,7 +94,7 @@ async function handleFormSubmit(event) {
     showFeedbackMessage("error", getErrorMessage(error));
   } finally {
     btn.disabled = false;
-    btn.innerHTML = '<span aria-hidden="true">✉️</span> Kirim Pesan';
+    btn.innerHTML = '<span aria-hidden="true">✉</span> Kirim Pesan';
   }
 }
 
@@ -255,133 +252,7 @@ function handleInitializationError(error) {
   }
 }
 
-// ========================================================
-// ===  NAVIGATION TOGGLE (STICKY‑NOTE NAVBAR) ============
-// ========================================================
-
-/* ---------- SECTION TOGGLE ---------- */
-// Navigation functionality with paper-like animations
-const navTabs = document.querySelectorAll(".nav-tab");
-const sections = document.querySelectorAll(".section-container");
-let isAnimating = false;
-
-navTabs.forEach((tab) => {
-  tab.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    // Prevent rapid clicking during animation
-    if (isAnimating) return;
-
-    const targetSection = tab.getAttribute("data-section");
-    const currentActiveSection = document.querySelector(
-      ".section-container.show"
-    );
-
-    // If clicking the same tab, do nothing
-    if (currentActiveSection && currentActiveSection.id === targetSection)
-      return;
-
-    isAnimating = true;
-
-    // Remove active class from all tabs
-    navTabs.forEach((t) => t.classList.remove("active"));
-
-    // Add active class to clicked tab
-    tab.classList.add("active");
-
-    // Animate out current section if exists
-    if (currentActiveSection) {
-      currentActiveSection.classList.add("slide-out");
-
-      // Wait for slide-out animation to complete
-      setTimeout(() => {
-        currentActiveSection.classList.remove("show", "slide-out");
-
-        // Show and animate in new section
-        const newSection = document.getElementById(targetSection);
-        newSection.classList.add("show");
-
-        // Allow new animations after slide-in completes
-        setTimeout(() => {
-          isAnimating = false;
-        }, 600);
-      }, 400);
-    } else {
-      // No current section, just show new one
-      document.getElementById(targetSection).classList.add("show");
-      setTimeout(() => {
-        isAnimating = false;
-      }, 600);
-    }
-  });
-});
-
-// pop up
-document.addEventListener('DOMContentLoaded', function() {
-    // Create popup elements
-    const popupOverlay = document.createElement('div');
-    popupOverlay.className = 'popup-overlay';
-    popupOverlay.id = 'contactPopup';
-    
-    const popupContent = document.createElement('div');
-    popupContent.className = 'popup-content';
-    
-    const closeBtn = document.createElement('button');
-    closeBtn.className = 'popup-close';
-    closeBtn.innerHTML = '&times;';
-    closeBtn.setAttribute('aria-label', 'Tutup popup');
-    
-    // Get existing form and clone it
-    const existingForm = document.getElementById('contact-me');
-    const clonedForm = existingForm.cloneNode(true);
-    clonedForm.id = 'contact-me-popup';
-    
-    // Build popup structure
-    popupContent.appendChild(closeBtn);
-    popupContent.appendChild(clonedForm);
-    popupOverlay.appendChild(popupContent);
-    document.body.appendChild(popupOverlay);
-    
-    // Create trigger button (you can remove this if you already have one)
-    const triggerBtn = document.createElement('button');
-    triggerBtn.className = 'trigger-popup-btn';
-    triggerBtn.textContent = 'Hubungi Kami (Popup)';
-    existingForm.parentNode.insertBefore(triggerBtn, existingForm);
-    
-    // Toggle popup functions
-    function openPopup() {
-        popupOverlay.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
-    }
-    
-    function closePopup() {
-        popupOverlay.style.display = 'none';
-        document.body.style.overflow = 'auto'; // Re-enable scrolling
-    }
-    
-    // Event listeners
-    triggerBtn.addEventListener('click', openPopup);
-    closeBtn.addEventListener('click', closePopup);
-    
-    // Close when clicking outside
-    popupOverlay.addEventListener('click', function(e) {
-        if (e.target === popupOverlay) {
-            closePopup();
-        }
-    });
-    
-    // Close with Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && popupOverlay.style.display === 'flex') {
-            closePopup();
-        }
-    });
-    
-    // Handle form submission in popup (optional)
-    clonedForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Your existing form handling will work here
-        // Then close the popup
-        setTimeout(closePopup, 1000); // Close after 1 second
-    });
-});
+/***** PUBLIC API *****/
+export function initEmailSystem() {
+  initializeEmailSystem().catch(handleInitializationError);
+}
