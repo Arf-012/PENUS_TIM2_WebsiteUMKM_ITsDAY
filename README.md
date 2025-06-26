@@ -1,4 +1,7 @@
-## Halo.
+
+![Poster](https://raw.githubusercontent.com/Arf-012/PENUS_TIM2_WebsiteUMKM_ITsDAY/refs/heads/master/PosterUMKMTim2.jpg)
+
+## Halo. 
 
 Kami dari Tim 2 SMK Pelita Nusantara patut mempresentasikan website original buatan kami.
 Bertema franchise UMKM Suka-Suka Chicken, website ini ditujui untuk mengikuti lomba Website UMKM IT's Day
@@ -8,42 +11,45 @@ yang diselanggarakan oleh Jakarta Global University.
 
 Nama UMKM	: Suka-Suka Chicken
 
-Saat saya melihat bagian penilaian dari fil .pdf syarat dan ketentuan lomba website UMKM sekitar seminggu lalu,
-ada sesuatu yang menangkap mata saya. "Original", dan "Kreativitas." Mengapa mata saya tiba-tiba tertarik kepada dua
-konsep ini? Saya saja juga mempertanyakan pertanyaan itu ke saya sendiri. Setelah mendesain dan memprogram website
-UMKM-nya dengan tim saya, sepertinya saya sudah bisa menjawab dengan kepercayaan diri.
+Saat saya melihat bagian penilaian dari file .pdf syarat dan ketentuan lomba website UMKM sekitar seminggu lalu,
+ada sesuatu yang menangkap perhatian saya: "Originalitas" dan "Kreativitas". Mengapa mata saya tiba-tiba tertarik pada dua
+konsep ini? Saya sendiri bahkan mempertanyakan hal itu. Setelah mendesain dan memprogram website
+UMKM-nya bersama tim saya, sepertinya saya sudah bisa menjawabnya dengan percaya diri.
 
-Sebuah website yang bagus memiliki beberapa bagian penting untuk membuatnya unggul atau bagus, serta juga
-fungsional bagi anggota publik yang memakai. Kebanyakan website memiliki navbar di bagian atas yang menjadi 'burger'
-ketika di viewport mobile, kebanyakan website memiliki fitur untuk bisa scroll ke Bawah, kebanyakan website
-memiliki bagian 'Contact' dibawah website, dan logo website-nya tersebar dimana-mana.
+Sebuah website yang bagus memiliki beberapa elemen penting untuk membuatnya unggul, menarik, dan
+fungsional bagi publik yang mengaksesnya. Kebanyakan website memiliki navbar di bagian atas yang berubah menjadi 'burger'
+saat dibuka di viewport mobile. Kebanyakan juga bisa di-scroll ke bawah, memiliki bagian 'Contact' di bagian akhir halaman,
+dan logo yang tersebar di berbagai tempat.
 
-Tapi, bagaimana kalua saya tidak mau pakai navbar konvensional? Bagaimana jika saya tidak mau website
-yang bisa di scroll ke bawah? Pada hari sebelum-sebelumnya, saya melihat contoh website UMKM sebagai inspirasi.
-Kebanyakan dari website-website tersebut memiliki struktur yang sama, bahkan ada yang mengikuti placement UI
-yang sama--seperti mobil yang body panelnya di ganti-ganti agar bisa dijual di merek lain. Walaupun tidak semuanya,
-ini memotivasikan saya untuk membuat yang berbeda.
+Tapi, bagaimana kalau saya tidak ingin menggunakan navbar konvensional? Bagaimana jika saya tidak ingin website
+yang bisa di-scroll ke bawah? Beberapa hari sebelumnya, saya melihat contoh-contoh website UMKM sebagai inspirasi.
+Kebanyakan dari website-website tersebut memiliki struktur yang sama—bahkan ada yang meniru penempatan elemen UI
+secara keseluruhan, seperti mobil yang hanya diganti panel bodinya agar bisa dijual dengan merek lain. Meskipun tidak semuanya,
+hal itu memotivasi saya untuk menciptakan sesuatu yang berbeda.
 
-Mungkin saya salah, mungkin website yang di desain oleh tim saya memiliki fungsionalitas yang buruk.
-Mungkin website-nya terlalu kompleks untuk dipakai, mungkin website-nya tidak memiliki fitur-fitur yang ada
-di website lain-nya. Tetapi, yang tentu, website kita sangat seru untuk dipakai dan dilihat. Itulah, mungkin,
-jawaban saya atas konsep website-nya.
-
-## Fitur Keunggulan
+Mungkin saya salah. Mungkin website yang dirancang oleh tim saya memiliki fungsionalitas yang kurang baik.
+Mungkin terlalu kompleks untuk digunakan, atau tidak memiliki fitur-fitur yang dimiliki website lain.
+Namun satu hal yang pasti: website kami sangat seru untuk digunakan dan dilihat. Dan mungkin,
+itulah jawaban saya atas konsep dari website ini.
+## Fitur Keunggulan:
 - Website style buku
 - Navbar dan UI Wesbite yang unik
 - Animasi navbar unik
 - Sistem pesan yang tersambung ke EmailJS
-
-## Teknologi Dipakai
+## Teknologi Dipakai:
 - HTML
 - CSS
 - JS
 - CDNJS
 - Figma
 
-## Authors
 
-- [Arf-012](https://github.com/Arf-012) - Frontend Developer
-- [Ozan1123](https://github.com/Ozan1123) - Frontend Developer
-- [dacodpla](https://github.com/dacodpla) - UI/UX Designer
+## Authors:
+
+- [Farhan Aditya](https://github.com/Arf-012) - Frontend Developer
+- [M. Fauzan Pratama](https://github.com/Ozan1123) - Frontend Developer
+- [Dylan A.C.](https://github.com/dacodpla) - UI/UX Designer
+
+## Links
+[![Website](https://img.shields.io/badge/SUKASUKA!-cd2b2b
+)](https://sukasukachicken.vercel.app/)
